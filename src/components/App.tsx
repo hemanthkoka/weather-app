@@ -1,9 +1,9 @@
 import * as React from "react";
 import { useSelector } from "react-redux";
 
-import { Map } from "./components/Map";
-import { Weather } from "./components/Weather";
-import { RootState } from "./shared/store/reducers";
+import { Map } from "./Map";
+import { Weather } from "./Weather";
+import { RootState } from "../shared/store/reducers";
 
 export interface AppProps {}
 
@@ -26,5 +26,3 @@ export const App: React.FC<AppProps> = () => {
     </div>
   );
 };
-
-export default App;
