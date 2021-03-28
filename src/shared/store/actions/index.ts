@@ -1,4 +1,3 @@
-import { resolve } from "node:path";
 import { createAction } from "typesafe-actions";
 import Weather from "../../models/Weather";
 import {

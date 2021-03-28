@@ -1,9 +1,9 @@
 import * as React from "react";
 import { useSelector } from "react-redux";
-
 import { Map } from "./components/Map";
 import { Weather } from "./components/Weather";
 import { RootState } from "./shared/store/reducers";
+import "./style/style.css";
 
 export interface AppProps {}
 

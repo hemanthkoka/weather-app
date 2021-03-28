@@ -8,9 +8,11 @@ export type RootState = {
   map: MapState;
 };
 
-const reducers = combineReducers({
+const rootReducer = {
   weather: weatherReducer,
   map: mapReducer,
-});
+};
+
+const reducers = combineReducers(rootReducer);
 
 export default reducers;

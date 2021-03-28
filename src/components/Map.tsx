@@ -12,18 +12,21 @@ export interface MapProps {}
 
 export const Map: React.FC<MapProps> = () => {
   const dispatch = useDispatch();
+
   const mapReady = React.useCallback(() => dispatch(actions.mapReadyAction()), [
     dispatch,
   ]);
+
   const getWeather = React.useCallback(
     (lat: number, lng: number) => dispatch(actions.weatherGetAction(lat, lng)),
     [dispatch]
   );
+
   const mapRef = React.useCallback((node: HTMLDivElement) => {
     if (node !== null) {
       const onLoaded = () => {
         const map = new google.maps.Map(node, {
-          center: { lat: 35.6811673, lng: 139.7648629 }, // default is Tokyo station!!
+          center: { lat: 17.385, lng: 78.4867 }, // default is Hyderabad station!!
           zoom: 8,
           mapTypeControl: false,
           disableDoubleClickZoom: false,
