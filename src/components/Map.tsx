@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useDispatch } from "react-redux";
-import { actions } from "../shared/store";
+import * as actions from "../shared/store/actions";
 
 declare global {
   interface Window {

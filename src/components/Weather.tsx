@@ -5,7 +5,7 @@ import { RootState } from "../shared/store/reducers";
 
 export interface WeatherProps {}
 
-export const Weather: React.SFC<WeatherProps> = () => {
+export const Weather: React.FC<WeatherProps> = () => {
   const { weather } = useSelector((state: RootState) => state.weather);
   if (!weather) {
     return null;

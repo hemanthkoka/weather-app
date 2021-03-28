@@ -26,5 +26,3 @@ export const App: React.FC<AppProps> = () => {
     </div>
   );
 };
-
-export default App;
