@@ -1,10 +1,9 @@
 import { Epic } from "redux-observable";
 import { from, of } from "rxjs";
-import { filter, map, catchError, switchMap } from "rxjs/operators";
-import { isActionOf } from "typesafe-actions";
-
+import { map, catchError, switchMap, filter } from "rxjs/operators";
+import * as constants from "../constants";
 import { RootState } from "../reducers";
-import { actions, ActionsType } from "..";
+import { actions } from "..";
 import * as API from "../../services/Api";
 
 export const weatherGetEpic: Epic<
@@ -14,7 +13,7 @@ export const weatherGetEpic: Epic<
   typeof API
 > = (action$, store, { getWeather }) =>
   action$.pipe(
-    filter(isActionOf(actions.weatherGetAction)),
+    filter((action) => action.type === constants.WEATHER_GET),
     switchMap((action) =>
       from(getWeather(action.payload.lat, action.payload.lng)).pipe(
         map(actions.weatherSetAction),

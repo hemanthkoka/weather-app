@@ -1,5 +1,4 @@
 import { combineReducers } from "redux";
-
 import { weatherReducer, WeatherState } from "./WeatherReducer";
 import { mapReducer, MapState } from "./MapReducer";
 
@@ -8,11 +7,9 @@ export type RootState = {
   map: MapState;
 };
 
-const rootReducer = {
+const reducers = combineReducers({
   weather: weatherReducer,
   map: mapReducer,
-};
-
-const reducers = combineReducers(rootReducer);
+});
 
 export default reducers;

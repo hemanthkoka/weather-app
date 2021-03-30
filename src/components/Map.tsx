@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
 import * as actions from "../shared/store/actions";
 
@@ -42,7 +42,6 @@ export const Map: React.FC<MapProps> = () => {
         });
         mapReady();
       };
-      // remove this key when you run it on your localhost.
       const script = document.createElement("script");
       script.type = "text/javascript";
       script.src =
